@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bucks2Bar | Your year in numbers</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.js"
+      integrity="sha384-zYPBGXwO4633CABX/5Spf6emCKUJCfoOkhOMYyxMsatqQZPnDblmmOewfjsIVWCM"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="app-header">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">$</span> Bucks2Bar
+        </div>
+        <span class="header-note">A LITTLE CLARITY GOES A LONG WAY</span>
+      </header>
+
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">YOUR MONEY, IN PERSPECTIVE</p>
+        <h1 id="page-title">A clearer picture of your year.</h1>
+        <p>Track what comes in and what goes out, one month at a time.</p>
+      </section>
+
+      <section class="workspace" aria-label="Income and expense tracker">
+        <div class="workspace-header">
+          <div>
+            <p class="eyebrow">ANNUAL OVERVIEW</p>
+            <h2>Your finances</h2>
+          </div>
+          <span class="currency-badge">$</span>
+        </div>
+
+        <div class="tab-bar" role="tablist" aria-label="Finance views">
+          <button
+            class="view-tab active"
+            id="data-tab"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="data-panel"
+          >
+            Data
+          </button>
+          <button
+            class="view-tab"
+            id="chart-tab"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="chart-panel"
+            tabindex="-1"
+          >
+            Chart
+          </button>
+        </div>
+
+        <div
+          id="storage-message"
+          class="notice notice-warning"
+          role="status"
+          hidden
+        ></div>
+        <noscript
+          ><p class="notice notice-warning">
+            JavaScript is required to enter and chart your data.
+          </p></noscript
+        >
+
+        <div
+          id="data-panel"
+          class="panel"
+          role="tabpanel"
+          aria-labelledby="data-tab"
+          tabindex="0"
+        >
+          <div class="panel-heading">
+            <div>
+              <h3>Monthly details</h3>
+              <p>Enter your income and expenses for each month.</p>
+            </div>
+            <span class="save-hint"
+              ><span class="save-dot" aria-hidden="true"></span> Valid entries
+              saved in this browser</span
+            >
+          </div>
+
+          <p id="input-help" class="input-help">
+            Use non-negative amounts with up to two decimal places. Leave a
+            field blank if you have no entry.
+          </p>
+          <div class="table-wrap">
+            <table class="monthly-table">
+              <thead>
+                <tr>
+                  <th scope="col">Month</th>
+                  <th scope="col">Income <span>($)</span></th>
+                  <th scope="col">Expense <span>($)</span></th>
+                </tr>
+              </thead>
+              <tbody id="month-rows"></tbody>
+            </table>
+          </div>
+          <p class="privacy-note">
+            Your numbers stay in this browser. They are not sent to a server.
+          </p>
+        </div>
+
+        <div
+          id="chart-panel"
+          class="panel"
+          role="tabpanel"
+          aria-labelledby="chart-tab"
+          tabindex="0"
+          hidden
+        >
+          <div class="panel-heading">
+            <div>
+              <h3>Your year at a glance</h3>
+              <p>Compare your monthly income and expenses.</p>
+            </div>
+          </div>
+          <p id="chart-message" class="chart-message" role="status"></p>
+          <div class="chart-actions">
+            <button
+              id="download-chart"
+              class="download-button"
+              type="button"
+              disabled
+            >
+              Download PNG
+            </button>
+          </div>
+          <div class="chart-container">
+            <canvas
+              id="finance-chart"
+              role="img"
+              aria-label="Bar chart comparing monthly income and expenses in US dollars. The underlying values are available in the Data tab."
+            ></canvas>
+          </div>
+        </div>
+      </section>
+      <footer>Made for a little more financial clarity.</footer>
+    </main>
+  </body>
+</html>

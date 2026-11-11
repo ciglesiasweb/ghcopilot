@@ -1,0 +1,20 @@
+# Dependencias de npm y cache de Vitest dentro de node_modules
+node_modules/
+
+# Informes de cobertura de Vitest
+coverage/
+
+# Registros de npm y otras herramientas
+*.log
+npm-debug.log*
+
+# Archivos temporales de editores y herramientas
+*.tmp
+*.swp
+
+# Configuracion local de VS Code; conservar archivos compartibles
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
