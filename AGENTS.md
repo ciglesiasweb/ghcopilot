@@ -10,7 +10,7 @@ Bucks2Bar es una aplicación estática y browser-only para registrar ingresos y 
 - `tests/app.test.js`: pruebas de comportamiento con Vitest y jsdom.
 - `README.md`: ejecución local, pruebas y comportamiento de datos y privacidad.
 
-Antes de modificar una capa, consulta la guía correspondiente en [`docs/architecture.md`](docs/architecture.md). Mantén las responsabilidades separadas y sigue también las instrucciones específicas de la capa.
+Antes de modificar una capa, consulta la guía correspondiente en /docs con las instrucciones específicas de esa capa. Mantén las responsabilidades separadas y sigue también las instrucciones generales del proyecto.
 
 ## Invariantes del proyecto
 
